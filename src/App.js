@@ -1,3 +1,6 @@
+import React from "react";
+import Todos from "./Todos";
+import Contact from "./Contact";
 import "./styles.css";
 
 export default function App() {
