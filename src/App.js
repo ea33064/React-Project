@@ -1,13 +1,23 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import Todos from "./Todos";
 import Contact from "./Contact";
 import "./styles.css";
 
-export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
-}
+ReactDOM.render(
+  <div>
+    <nav>
+      <ul>
+        <li>
+          <a href="#todos">Todos</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <Todos />
+    <Contact />
+  </div>,
+  document.getElementById("root"),
+);
