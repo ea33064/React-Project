@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Todos = () => {
   const [todos, setTodos] = useState([]);
 
@@ -13,6 +14,10 @@ const Todos = () => {
         todo.id === id ? { ...todo, completed: !todo.completed } : todo,
       ),
     );
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -29,8 +34,20 @@ const Todos = () => {
       </form>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id} onClick={() => toggleCompleted(todo.id)}>
-            {todo.completed ? <strike>{todo.text}</strike> : todo.text}
+          <li key={todo.id}>
+            <div className="todo-text">
+              {todo.completed ? (
+                <del>{todo.text}</del>
+              ) : (
+                <span>{todo.text}</span>
+              )}
+              <button type="button" onClick={() => toggleCompleted(todo.id)}>
+                {todo.completed ? "Mark as incomplete" : "Mark as complete"}
+              </button>
+            </div>
+            <button type="button" onClick={() => deleteTodo(todo.id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
