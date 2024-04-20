@@ -6,21 +6,22 @@ const About = () => {
       <div className="row">
         <div className="col-lg-4 ms-auto">
           <h2 className="section-heading" style={{ textAlign: "center" }}>
-            About Me
+            About this app
           </h2>
           <p className="lead">
-            Hi! Im Eric, a dynamic and driven Software Engineer with a passion
-            for leveraging cutting-edge technologies to develop innovative
-            solutions.
+            Hi! My Todos app is a simple and intuitive to-do list application
+            that allows users to manage their tasks with ease. With features
+            like adding, marking as complete, and deleting tasks, this Todos app
+            is a reliable tool for staying organized and managing daily tasks.
           </p>
         </div>
         <div className="col-lg-4 me-auto">
           <p className="lead">
-            Eager to contribute my solid foundation in programming languages and
-            software development methodologies to a collaborative team
-            environment. Seeking an opportunity to further enhance my skills and
-            knowledge while making meaningful contributions to impactful
-            projects in the software engineering field.
+            The app includes a contact page for users to get in touch with us
+            for any questions or feedback. We hope you find our app helpful and
+            easy to use, and we welcome any suggestions or comments you may
+            have. Thank you for choosing my Todos app! Click the link below to
+            view my GitHub.
           </p>
         </div>
       </div>

@@ -1,33 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Todos from "./Todos";
 import About from "./About";
 import Contact from "./Contact";
 import ErrorBoundary from "./ErrorBoundary";
 
-const App = () => {
-  const routes = [
-    { path: "/todos", element: <Todos /> },
-    { path: "/about", element: <About /> },
-    { path: "/contact", element: <Contact /> },
-  ];
+const routes = [
+  { path: "/todos", title: "Todos", element: <Todos /> },
+  { path: "/about", title: "About this app", element: <About /> },
+  { path: "/contact", title: "Contact", element: <Contact /> },
+];
 
+const App = () => {
   return (
     <ErrorBoundary>
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <a href="/todos">Todos</a>
-              </li>
-              <li>
-                <a href="/about">About</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
-              </li>
-            </ul>
+          <nav style={{ display: "flex", justifyContent: "space-around" }}>
+            {routes.map((route) => (
+              <Link key={route.path} to={route.path}>
+                <button style={{ padding: "5px 10px", margin: "0 5px" }}>
+                  {route.title}
+                </button>
+              </Link>
+            ))}
           </nav>
           <Routes>
             {routes.map((route) => (
@@ -38,6 +34,9 @@ const App = () => {
               />
             ))}
           </Routes>
+          <footer>
+            <p>Copyright © 2024 EA-HUB Todo App</p>
+          </footer>
         </div>
       </Router>
     </ErrorBoundary>
